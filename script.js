@@ -119,6 +119,16 @@ function calculate() {
 }
 
 
+/* Remove pasted invalid characters */
+display.addEventListener('input', () => {
+
+  display.value = display.value.replace(
+    /[^0-9+\-*/%.]/g,
+    ''
+  );
+
+  saveValue();
+});
 
 /* Global keyboard shortcuts */
 document.addEventListener('keydown', (event) => {
